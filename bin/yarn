@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+set -e
+
+cd "$(dirname "$0")/.."
+
+main() {
+  load_env
+  [ -z "$CODEBUILD_BUILD_ID" ] || exec yarn "$@"
+  load_nvm
+  exec yarn "$@"
+}
+
+load_env() {
+  . ./env.sh
+}
+
+load_nvm() {
+  set +e
+  . ~/.nvm/nvm.sh
+  set -e
+  ! nvm use || return 0
+  nvm install
+  nvm use
+}
+
+main "$@"

@@ -1,8 +1,4 @@
-*~
-*.swp
-*.swo
-*.log
-.vscode
-node_modules/
-coverage/
-dist/
+/node_modules
+/coverage
+/dist
+/env.sh

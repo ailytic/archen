@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+set -e
+set -x
+cd "$(dirname "$0")/.."
+
+main() {
+  check_requirements
+  copy_env_sh
+  sign_in_nexus
+  install_npm_packages
+}
+
+check_requirements() {
+  [ -n "$CODEBUILD_BUILD_ID" ] || ls ~/.nvm/nvm.sh > /dev/null
+  type yarn > /dev/null
+}
+
+copy_env_sh() {
+  [ ! -e env.sh ] || return 0
+  cp -v env.sh{.example,}
+}
+
+sign_in_nexus() {
+  [ -n "$CODEBUILD_BUILD_ID" ] || return 0
+  [ -n "$VERSION" ] || return 0
+  echo @ailytic:registry=http://nexus.dev.ailytic.com:8081/repository/ailytic-npm-hosted/ >> ~/.npmrc
+  echo "//nexus.dev.ailytic.com:8081/repository/ailytic-npm-hosted/:_authToken=NpmToken.$NEXUS_TOKEN" >> ~/.npmrc
+}
+
+install_npm_packages() {
+  bin/yarn --frozen-lockfile
+}
+
+main
