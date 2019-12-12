@@ -8,7 +8,7 @@ import {
   Dialect,
   Value,
   toCamelCase
-} from 'sqlit';
+} from '@ailytic/sqlit';
 
 interface FieldInfo {
   alias: string;

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -e
+set -x
+cd "$(dirname "$0")/.."
+
+bin/prepare
+bin/yarn run exec bin/publish

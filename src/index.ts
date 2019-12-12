@@ -11,7 +11,7 @@ import {
   ConnectionPool,
   ConnectionInfo,
   createConnectionPool
-} from 'sqlit';
+} from '@ailytic/sqlit';
 
 export interface ArchenConfig {
   database: {
