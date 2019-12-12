@@ -36,11 +36,11 @@ import {
   NULL,
   SOME,
   NONE
-} from 'sqlit';
+} from '@ailytic/sqlit';
 
 import { Accessor } from './accessor';
 import { firstOf } from './misc';
-import { toPascalCase } from 'sqlit';
+import { toPascalCase } from '@ailytic/sqlit';
 
 interface ObjectTypeMap {
   [key: string]: GraphQLObjectType;

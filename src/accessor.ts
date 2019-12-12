@@ -12,7 +12,7 @@ import {
   SelectOptions,
   Row,
   Value
-} from 'sqlit';
+} from '@ailytic/sqlit';
 
 import { cursorQuery } from './cursor';
 import { hasOnly } from './schema';
