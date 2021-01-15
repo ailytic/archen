@@ -13,7 +13,7 @@
   "author": "Ailytic",
   "license": "MIT",
   "dependencies": {
-    "@ailytic/sqlit": "^2.0.0",
+    "@ailytic/sqlit": "^2.1.0",
     "dataloader": "^1.4.0",
     "graphql": "^0.13.2"
   },
