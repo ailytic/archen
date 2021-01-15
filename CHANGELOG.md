@@ -1,5 +1,9 @@
 # archen
 
+## [Unreleased]
+### Changed
+- Update `sqlit`.
+
 ## [2.0.0]
 ### Changed
 - Use an external connection pool.
